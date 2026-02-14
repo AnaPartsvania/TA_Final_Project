@@ -22,10 +22,10 @@ public class User {
     private boolean optinSubscribed;
     private String subscribeEmail;
 
-    // Default Constructor
+
     public User() {}
 
-    // Getters and Setters
+
     public String getSubscribeEmail() {
         return subscribeEmail;
     }

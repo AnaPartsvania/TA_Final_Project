@@ -34,17 +34,17 @@ public class BaseApiTest {
     protected User getUser() {
         User user = new User();
 
-        user.setName("Test User " + System.currentTimeMillis());
-        user.setEmail("automation_" + System.currentTimeMillis() + "@gmail.com");
+        user.setName("jane" + System.currentTimeMillis());
+        user.setEmail("jane_doe" + System.currentTimeMillis() + "@gmail.com");
         user.setPassword("Pass123!");
-        user.setTitle("Mr");
+        user.setTitle("Ms");
         user.setBirth_day("10");
         user.setBirth_month("May");
         user.setBirth_year("1990");
-        user.setFirstname("Auto");
-        user.setLastname("Tester");
+        user.setFirstname("Jane");
+        user.setLastname("Doe");
         user.setCompany("Testing Co");
-        user.setAddress1("123 Selenium Lane");
+        user.setAddress1("123 5th Avenue");
         user.setAddress2("block 8");
         user.setCountry("United States");
         user.setState("New York");

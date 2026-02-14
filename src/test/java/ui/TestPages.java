@@ -1,6 +1,8 @@
 package ui;
 
 import base.BaseTest;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import models.User;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -23,8 +25,10 @@ public class TestPages extends BaseTest{
         user = new User();
     }
 
-    //Test case 7 verify test cases page
+
     @Test
+    @Description("Test case 7: Verify that user is on the test cases page")
+
     public void verifyTestHomePage() {
         homePage.openPage();
         Assert.assertTrue(homePage.isHomePageVisible(), "Homepage is not visible!");
@@ -33,8 +37,10 @@ public class TestPages extends BaseTest{
         Assert.assertEquals(testCases.getTestCasesText(), "TEST CASES");
     }
 
-    //Test case 10 verify subscription
+
     @Test
+    @Description("Test case 10: Verify subscription on Homepage")
+
     public void verifySubscribeEmail() {
         homePage.openPage();
         Assert.assertTrue(homePage.isHomePageVisible(), "Homepage is not visible!");
@@ -44,8 +50,11 @@ public class TestPages extends BaseTest{
         Assert.assertTrue(homePage.successMsgIsDisplayed(), "Subscribe email is not displayed!");
     }
 
-    //Test case 11 verify subscription on Cart page
+
+
     @Test
+    @Description("Test case 11: Verify subscription on Cart page")
+
     public void verifySubscribeEmailCart() {
         homePage.openPage();
         Assert.assertTrue(homePage.isHomePageVisible(), "Homepage is not visible!");

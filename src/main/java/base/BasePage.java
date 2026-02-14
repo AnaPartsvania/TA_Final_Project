@@ -23,21 +23,21 @@ public class BasePage {
     public void handleVignette() {
         if (driver.getCurrentUrl().contains("google_vignette")) {
             try {
-                // Wait for the "Dismiss" or "Close" button which is usually inside an iframe
+
                 driver.switchTo().frame("ad_iframe");
                 WebElement dismissButton = driver.findElement(By.id("dismiss-button"));
                 dismissButton.click();
                 driver.switchTo().defaultContent();
             } catch (Exception e) {
-                // If the button isn't there, just refresh to clear the URL state
+
                 driver.navigate().refresh();
             }
         }
     }
+
     protected void navigateToUrl(String url) {
         driver.get(url);
     }
-
 
     protected WebElement waitForElementToBeClickable(WebElement element) {
         return wait.until(ExpectedConditions.elementToBeClickable(element));

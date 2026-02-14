@@ -1,6 +1,7 @@
 package pages;
 
 import base.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -25,16 +26,18 @@ public class HomePage extends BasePage {
 
     public HomePage(WebDriver driver) {
         super(driver);
-        handleVignette();
     }
 
     public void openPage() {
         navigateToUrl(PAGE_URL);
     }
 
+    @Step("Verify that home page is visible successfully")
     public boolean isHomePageVisible() {
         return driver.findElement(homeLogo).isDisplayed();
     }
+
+    @Step("Verify 'Logged in' text is visible")
     public String getLoggedInUserText() {
         return driver.findElement(loggedInAsText).getText();
     }
@@ -62,6 +65,7 @@ public class HomePage extends BasePage {
         driver.findElement(testCaseBtn).click();
     }
 
+    @Step("Enter email address in input and click arrow button")
     public void subscribeEmail(String email) {
         WebElement footer = driver.findElement(footerWidget);
         scrollToElement(footer);
@@ -70,6 +74,7 @@ public class HomePage extends BasePage {
         driver.findElement(arrowBtn).click();
     }
 
+    @Step("Verify success message 'You have been successfully subscribed!' is visible")
     public boolean successMsgIsDisplayed() {
         WebElement success = waitForVisibilityOfElement(successMsg);
         return success.isDisplayed();

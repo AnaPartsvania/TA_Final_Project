@@ -1,6 +1,8 @@
 package ui;
 
 import base.BaseTest;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -17,8 +19,10 @@ public class TestProductPage extends BaseTest{
         products = new Products(driver);
     }
 
-    //Test case 8 verify all products and detail page
+
     @Test
+    @Description("Test case 8: Verify that all products are displayed on the products page")
+
     public void verifyAllProducts() {
         homePage.openPage();
         Assert.assertTrue(homePage.isHomePageVisible(), "Homepage is not visible!");
@@ -34,8 +38,10 @@ public class TestProductPage extends BaseTest{
 
     }
 
-    //Test case 12 add products to the card
+
     @Test
+    @Description(" Test case 12: Verify that user can add a product to the cart, continue shopping and then check the cart")
+
     public void verifyAddProduct() {
         homePage.openPage();
         Assert.assertTrue(homePage.isHomePageVisible(), "Homepage is not visible!");

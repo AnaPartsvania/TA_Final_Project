@@ -1,6 +1,7 @@
 package api;
 
 import base.BaseApiTest;
+import io.qameta.allure.Description;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -10,22 +11,22 @@ import java.util.Map;
 
 public class TestProductsApi extends BaseApiTest {
 
-    //api 1 get all products
+
     @Test
+    @Description("API 1: get all products")
     public void getAllProducts() {
         Response response = productClient.getAllProducts();
-        response.prettyPrint();
         Assert.assertEquals(response.jsonPath().getInt("responseCode"), 200);
 
         List<Map<String, Object>> products = response.jsonPath().getList("products");
         Assert.assertFalse(products.isEmpty(), "Product list should not be empty!");
     }
 
-    //api 3 get all brands
+
     @Test
+    @Description("API 3: get all brands")
     public void getAllBrands() {
         Response response = productClient.getAllBrands();
-        response.prettyPrint();
 
         response.then().assertThat().statusCode(200);
 
@@ -33,13 +34,13 @@ public class TestProductsApi extends BaseApiTest {
         Assert.assertFalse(brands.isEmpty(), "Brand list should not be empty!");
     }
 
-    //api 5 search a product
+
     @Test
+    @Description("API 5: search a product")
     public void searchProducts() {
         String product = "top";
 
         Response response = productClient.searchProduct(product);
-        response.prettyPrint();
         response.then().assertThat().statusCode(200);
     }
 }

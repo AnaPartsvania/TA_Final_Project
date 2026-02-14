@@ -1,6 +1,7 @@
 package pages;
 
 import base.BasePage;
+import io.qameta.allure.Step;
 import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -44,12 +45,12 @@ public class RegistrationDetailsPage extends BasePage {
     private By newsletterCheckbox = By.id("newsletter");
     private By optinCheckbox = By.id("optin");
 
-    // 1. check title
+    @Step("Verify that 'ENTER ACCOUNT INFORMATION' is visible")
     public String getRegPageTitle() {
         return driver.findElement(infoText).getText();
     }
 
-    // 2. fill form
+    @Step("Fill details: Title, Name, Password, Date of birth")
     public void fillFullRegistrationForm1(User user) {
         WebElement element = driver.findElement(mrsRadio);
         scrollToElement(element);
@@ -73,6 +74,7 @@ public class RegistrationDetailsPage extends BasePage {
         selectYears.selectByVisibleText(user.getBirth_year());
     }
 
+    @Step("Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number")
     public void fillFullRegistrationForm2(User user) {
 
         driver.findElement(firstNameField).sendKeys(user.getFirstname());
@@ -92,6 +94,7 @@ public class RegistrationDetailsPage extends BasePage {
         driver.findElement(mobileField).sendKeys(user.getMobile_number());
     }
 
+    @Step("Select checkbox 'Sign up for our newsletter!' and  'Receive special offers from our partners!'")
     public void checkerOptions(User user) {
         WebElement element = driver.findElement(newsletterCheckbox);
         scrollToElement(element);
@@ -109,6 +112,8 @@ public class RegistrationDetailsPage extends BasePage {
             }
         }
     }
+
+    @Step("Click 'Create Account button'")
     public void clickCreateAccount() {
         WebElement element = driver.findElement(createAccountBtn);
         scrollToElement(element);

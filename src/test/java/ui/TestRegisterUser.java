@@ -1,5 +1,7 @@
 package ui;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import models.User;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -23,8 +25,11 @@ public class TestRegisterUser extends BaseTest{
         deletedAccount = new DeletedAccount(driver);
     }
 
-    //Test case 1 create account
+
+
     @Test
+    @Description("Test case 1: Create an account for a new user")
+
     public void testingRegisterUserFlow() {
         User user = getUser();
         homePage.openPage();
@@ -52,8 +57,10 @@ public class TestRegisterUser extends BaseTest{
         deletedAccount.clickContinueBtn();
     }
 
-    //Test case 5 register with existing email
+
     @Test
+    @Description("Test case 5: register user with existing email")
+
     public void testingRegisterUserWithWrongEmailFlow() {
         User user = new User();
 
@@ -64,39 +71,11 @@ public class TestRegisterUser extends BaseTest{
         user.setName("jane9");
         user.setEmail("janeDoe777@gmail.com");
 
+
         Assert.assertEquals(loginPage.getSignupSectionTitle(), "New User Signup!");
         loginPage.enterInitialSignup(user.getName(),user.getEmail());
 
         Assert.assertEquals(loginPage.getEmailAlreadyExistsSectionTitle(), "Email Address already exist!");
 
     }
-
-//    private static User getUser() {
-//        User user = new User();
-//
-//        user.setName("Test User " + System.currentTimeMillis());
-//        user.setEmail("automation_" + System.currentTimeMillis() + "@gmail.com");
-//        user.setPassword("Pass123!");
-//        user.setTitle("Mr");
-//        user.setBirth_day("10");
-//        user.setBirth_month("May");
-//        user.setBirth_year("1990");
-//        user.setFirstname("Auto");
-//        user.setLastname("Tester");
-//        user.setCompany("Testing Co");
-//        user.setAddress1("123 Selenium Lane");
-//        user.setAddress2("block 8");
-//        user.setCountry("United States");
-//        user.setState("New York");
-//        user.setCity("NYC");
-//        user.setZipcode("10001");
-//        user.setMobile_number("5551234567");
-//
-//        user.setNewsletterSubscribed(true);
-//        user.setSpecialOffersSubscribed(true);
-//
-//        return user;
-//
-//    }
-
 }

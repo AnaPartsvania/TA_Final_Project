@@ -2,6 +2,8 @@ package ui;
 
 import api.clients.UserClient;
 import base.BaseTest;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import models.User;
 import org.testng.Assert;
@@ -25,8 +27,10 @@ public class TestLogin extends BaseTest{
         userClient = new UserClient();
     }
 
-    //Test case 2 login with correct credential
+
     @Test
+    @Description("Test case 2: Login with correct credentials(email, password)")
+
     public void testLoginFlow() {
 
         homePage.openPage();
@@ -51,8 +55,11 @@ public class TestLogin extends BaseTest{
         Assert.assertEquals(deletedAccount.getPageTitle(), "ACCOUNT DELETED!");
     }
 
-    //Test case 4 logout
+
+
     @Test
+    @Description("Test case 4: Verify log out functionality")
+
     public void testLogoutFlow() {
 
         homePage.openPage();
@@ -76,8 +83,11 @@ public class TestLogin extends BaseTest{
         Assert.assertEquals(loginPage.getLoginSectionTitle(), "Login to your account");
     }
 
-    //Test case 3 login with wrong credentials
+
+
     @Test
+    @Description("Test case 3: Login with wrong credentials")
+
     public void testLoginWrongFlow() {
         User user = new User();
 

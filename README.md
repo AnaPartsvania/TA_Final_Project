@@ -40,12 +40,13 @@ This is a comprehensive test automation framework built using Selenium WebDriver
 📊 Generating Allure Reports
 
 Allure reports provide comprehensive test execution details including test steps, screenshots, API requests/responses, and more.
-Generate and View Report (Recommended)
+Generate and View Report.
 
    After running tests:
-    ```bash
-    allure serve allure-results
-    ````
+ 
+```bash 
+       allure serve allure-results
+```
 
 This command will:
 * Generate the HTML report from test results
