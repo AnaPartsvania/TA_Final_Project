@@ -29,7 +29,6 @@ public class BasePage {
                 dismissButton.click();
                 driver.switchTo().defaultContent();
             } catch (Exception e) {
-
                 driver.navigate().refresh();
             }
         }
