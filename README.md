@@ -26,7 +26,7 @@ This is a comprehensive test automation framework built using Selenium WebDriver
    ```
 2. Navigate to the project directory
     ```bash
-    cd your-repo-name
+    cd TA_Final_Project
    ```
 3. Install dependencies
    ```bash
