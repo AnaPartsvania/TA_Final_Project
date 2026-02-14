@@ -12,7 +12,7 @@ This is a comprehensive test automation framework built using Selenium WebDriver
 | RestAssured        |API Testing                   |
 
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 * JDK 17 or higher
@@ -37,7 +37,7 @@ This is a comprehensive test automation framework built using Selenium WebDriver
    mvn test
     ```
 
-📊 Generating Allure Reports
+ Generating Allure Reports
 
 Allure reports provide comprehensive test execution details including test steps, screenshots, API requests/responses, and more.
 Generate and View Report.
